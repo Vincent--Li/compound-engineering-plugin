@@ -27,7 +27,7 @@ Create a new slash command in `.claude/commands/` for the requested task.
 **Web & APIs:**
 - WebFetch, WebSearch - research documentation
 - GitHub (gh cli) - PRs, issues, reviews
-- Puppeteer - browser automation, screenshots
+- Playwright - browser automation, screenshots
 
 **Integrations:**
 - AppSignal - logs and monitoring

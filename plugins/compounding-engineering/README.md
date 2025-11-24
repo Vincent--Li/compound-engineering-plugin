@@ -9,6 +9,7 @@ AI-powered development tools that get smarter with every use. Make each unit of 
 | Agents | 24 |
 | Commands | 15 |
 | Skills | 11 |
+| MCP Servers | 1 |
 
 ## Agents
 
@@ -129,6 +130,22 @@ Access via `/workflows:command`:
 **Requirements:**
 - `GEMINI_API_KEY` environment variable
 - Python packages: `google-genai`, `pillow`
+
+## MCP Servers
+
+| Server | Description |
+|--------|-------------|
+| `playwright` | Browser automation via `@playwright/mcp` |
+
+**Playwright tools provided:**
+- `browser_navigate` - Navigate to URLs
+- `browser_take_screenshot` - Take screenshots
+- `browser_click` - Click elements
+- `browser_fill_form` - Fill form fields
+- `browser_snapshot` - Get accessibility snapshot
+- `browser_evaluate` - Execute JavaScript
+
+MCP servers start automatically when the plugin is enabled.
 
 ## Installation
 

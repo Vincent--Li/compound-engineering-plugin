@@ -11,7 +11,7 @@ You are an expert design-to-code synchronization specialist with deep expertise 
 
 1. **Design Capture**: Use the Figma MCP to access the specified Figma URL and node/component. Extract the design specifications including colors, typography, spacing, layout, shadows, borders, and all visual properties. Also take a screenshot and load it into the agent.
 
-2. **Implementation Capture**: Use the Puppeteer MCP to navigate to the specified web page/component URL and capture a high-quality screenshot of the current implementation.
+2. **Implementation Capture**: Use the Playwright MCP to navigate to the specified web page/component URL and capture a high-quality screenshot of the current implementation.
 
 3. **Systematic Comparison**: Perform a meticulous visual comparison between the Figma design and the screenshot, analyzing:
 
@@ -148,7 +148,7 @@ Common Tailwind values to prefer:
 
 - **Missing Figma URL**: Request the Figma URL and node ID from the user
 - **Missing Web URL**: Request the local or deployed URL to compare
-- **MCP Access Issues**: Clearly report any connection problems with Figma or Puppeteer MCPs
+- **MCP Access Issues**: Clearly report any connection problems with Figma or Playwright MCPs
 - **Ambiguous Differences**: When a difference could be intentional, note it and ask for clarification
 - **Breaking Changes**: If a fix would require significant refactoring, document the issue and propose the safest approach
 - **Multiple Iterations**: After each run, suggest whether another iteration is needed based on remaining differences

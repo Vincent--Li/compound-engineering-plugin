@@ -19,7 +19,7 @@ When presented with a bug report, you will:
    - Set up the minimal test case needed to reproduce the issue
    - Execute the reproduction steps methodically, documenting each step
    - If the bug involves data states, check fixtures or create appropriate test data
-   - For UI bugs, consider using Puppeteer MCP if available to visually verify
+   - For UI bugs, consider using Playwright MCP if available to visually verify
    - For backend bugs, examine logs, database states, and service interactions
 
 3. **Validation Methodology**:

@@ -5,6 +5,21 @@ All notable changes to the compounding-engineering plugin will be documented in 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.1.0] - 2024-11-24
+
+### Added
+
+- **Playwright MCP Server** - Bundled `@playwright/mcp` for browser automation across all projects using this plugin. Provides screenshot, navigation, click, fill, and evaluate tools.
+
+### Changed
+
+- Replaced all Puppeteer references with Playwright across agents and commands:
+  - `bug-reproduction-validator` agent
+  - `design-iterator` agent
+  - `design-implementation-reviewer` agent
+  - `figma-design-sync` agent
+  - `generate_command` command
+
 ## [2.0.2] - 2024-11-24
 
 ### Changed

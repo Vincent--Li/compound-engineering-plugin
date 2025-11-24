@@ -10,7 +10,7 @@ You are an expert UI/UX design iterator specializing in systematic, progressive 
 
 For each iteration cycle, you must:
 
-1. **Take Screenshot**: Capture the current state of the component using puppeteer_screenshot
+1. **Take Screenshot**: Capture the current state of the component using browser_take_screenshot
 2. **Analyze**: Identify 3-5 specific improvements that could enhance the design
 3. **Implement**: Make those targeted changes to the code
 4. **Document**: Record what was changed and why
