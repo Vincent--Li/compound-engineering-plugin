@@ -5,6 +5,20 @@ All notable changes to the compound-engineering plugin will be documented in thi
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.26.3] - 2026-01-14
+
+### Changed
+
+- **`design-iterator` agent** - Now auto-loads design skills at start of iterations
+  - Added "Step 0: Discover and Load Design Skills (MANDATORY)" section
+  - Discovers skills from ~/.claude/skills/, .claude/skills/, and plugin cache
+  - Maps user context to relevant skills (Swiss design → swiss-design skill, etc.)
+  - Reads SKILL.md files to load principles into context before iterating
+  - Extracts key principles: grid specs, typography rules, color philosophy, layout principles
+  - Skills are applied throughout ALL iterations for consistent design language
+
+---
+
 ## [2.26.2] - 2026-01-14
 
 ### Changed

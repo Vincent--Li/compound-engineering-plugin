@@ -126,42 +126,94 @@ For each iteration, output:
 ```
 ## Iteration N/Total
 
-**Current State Analysis:**
-- [What's working well]
-- [What could be improved]
+**What's working:** [Brief - don't over-analyze]
 
-**Changes This Iteration:**
-1. [Specific change 1]
-2. [Specific change 2]
-3. [Specific change 3]
+**ONE thing to improve:** [Single most impactful change]
 
-**Implementation:**
-[Make the code changes]
+**Change:** [Specific, measurable - e.g., "Increase hero font-size from 48px to 64px"]
+
+**Implementation:** [Make the ONE code change]
 
 **Screenshot:** [Take new screenshot]
 
 ---
 ```
 
+**RULE: If you can't identify ONE clear improvement, the design is done. Stop iterating.**
+
 ## Important Guidelines
 
-- Make 3-5 meaningful changes per iteration, not too many
-- Each iteration should be noticeably different but cohesive
+- **SMALL CHANGES ONLY** - Make 1-2 targeted changes per iteration, never more
+- Each change should be specific and measurable (e.g., "increase heading size from 24px to 32px")
+- Before each change, decide: "What is the ONE thing that would improve this most right now?"
 - Don't undo good changes from previous iterations
 - Build progressively - early iterations focus on structure, later on polish
 - Always preserve existing functionality
 - Keep accessibility in mind (contrast ratios, semantic HTML)
+- If something looks good, leave it alone - resist the urge to "improve" working elements
 
 ## Starting an Iteration Cycle
 
 When invoked, you should:
 
-1. **Load relevant design skills first** - Check if the user mentions a specific style (e.g., "Swiss design", "minimalist", "Stripe-style") and load any available skills that match. Use the Skill tool to invoke design-related skills before starting iterations.
-2. Confirm the target component/file path
-3. Confirm the number of iterations requested (default: 10)
-4. Optionally confirm any competitor sites to research
-5. Set up browser with `browser_resize` for appropriate viewport
-6. Begin the iteration cycle
+### Step 0: Discover and Load Design Skills (MANDATORY)
+
+**ALWAYS discover and load relevant design skills before starting iterations.** This ensures you have the best practices, patterns, and principles loaded into context.
+
+**1. Discover ALL available design skills:**
+
+```bash
+# Check all skill locations for design-related skills
+ls ~/.claude/skills/ 2>/dev/null | grep -iE "(design|style|ui|ux|frontend|swiss|aesthetic)"
+ls .claude/skills/ 2>/dev/null | grep -iE "(design|style|ui|ux|frontend|swiss|aesthetic)"
+find ~/.claude/plugins/cache -path "*/skills/*" -name "*.md" 2>/dev/null | xargs grep -l -iE "(design|style|visual|typography|grid|layout)" | head -20
+```
+
+**2. Load skills based on context:**
+
+| User Mentions | Skills to Load |
+|---------------|----------------|
+| "Swiss design", "minimalist", "grid" | `swiss-design`, `swiss-design-skill` |
+| "frontend", "web", "UI" | `frontend-design` |
+| "Stripe", "Linear", "Vercel" | Research competitor + `frontend-design` |
+| General design work | Load ALL available design skills |
+
+**3. For each relevant skill found, READ the SKILL.md file:**
+
+```bash
+# Read skill documentation to load principles into context
+cat ~/.claude/skills/swiss-design/SKILL.md
+cat ~/.claude/skills/frontend-design/SKILL.md
+# etc.
+```
+
+**4. Extract and apply key principles:**
+
+After reading each skill, note the key design principles to follow during iterations:
+- Grid system specifications (columns, gutters, baseline)
+- Typography rules (scale, alignment, hierarchy)
+- Color philosophy (palette, accent usage)
+- Layout principles (asymmetry, whitespace, balance)
+- Anti-patterns to avoid
+
+**Example skill loading flow:**
+
+```
+1. User asks to improve design with "Swiss style"
+2. Search: ls ~/.claude/skills/ | grep -i swiss
+3. Found: swiss-design/
+4. Read: cat ~/.claude/skills/swiss-design/SKILL.md
+5. Extract: 8px baseline, 12-column grid, flush-left alignment, one typeface
+6. Apply these principles in ALL subsequent iterations
+```
+
+### Step 1-5: Continue with iteration cycle
+
+1. Confirm the target component/file path
+2. Confirm the number of iterations requested (default: 10)
+3. Optionally confirm any competitor sites to research
+4. Set up browser with `agent-browser` for appropriate viewport
+5. Begin the iteration cycle with loaded skill principles
 
 Start by taking an initial screenshot of the target element to establish baseline, then proceed with systematic improvements.
 
