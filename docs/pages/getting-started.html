@@ -4,7 +4,8 @@
 <head>
   <meta charset="utf-8" />
   <title>Getting Started - Compounding Engineering</title>
-  <meta content="Complete guide to installing and using the Compounding Engineering plugin for Claude Code." name="description" />
+  <meta content="Complete guide to installing and using the Compounding Engineering plugin for Claude Code."
+    name="description" />
   <meta content="width=device-width, initial-scale=1" name="viewport" />
 
   <!-- Styles -->
@@ -80,7 +81,9 @@
       <article class="docs-article">
         <h1>Getting Started with Compounding Engineering</h1>
         <p class="lead">
-          Five minutes from now, you'll run a single command that spins up 10 AI agents—each with a different specialty—to review your pull request in parallel. Security, performance, architecture, accessibility, all happening at once. That's the plugin. Let's get you set up.
+          Five minutes from now, you'll run a single command that spins up 10 AI agents—each with a different
+          specialty—to review your pull request in parallel. Security, performance, architecture, accessibility, all
+          happening at once. That's the plugin. Let's get you set up.
         </p>
 
         <!-- Installation Section -->
@@ -95,9 +98,10 @@
           </ul>
 
           <h3>Step 1: Add the Marketplace</h3>
-          <p>Think of the marketplace as an app store. You're adding it to Claude Code's list of places to look for plugins:</p>
+          <p>Think of the marketplace as an app store. You're adding it to Claude Code's list of places to look for
+            plugins:</p>
           <div class="card-code-block">
-            <pre><code>claude /plugin marketplace add https://github.com/kieranklaassen/every-marketplace</code></pre>
+            <pre><code>claude /plugin marketplace add https://github.com/Vincent--Li/compound-engineering-plugin</code></pre>
           </div>
 
           <h3>Step 2: Install the Plugin</h3>
@@ -118,7 +122,8 @@
             <div class="callout-content">
               <h4>Known Issue: MCP Servers</h4>
               <p>
-                The bundled MCP servers (Playwright for browser automation, Context7 for docs) don't always auto-load. If you need them, there's a manual config step below. Otherwise, ignore this—everything else works fine.
+                The bundled MCP servers (Playwright for browser automation, Context7 for docs) don't always auto-load.
+                If you need them, there's a manual config step below. Otherwise, ignore this—everything else works fine.
               </p>
             </div>
           </div>
@@ -157,7 +162,8 @@ claude agent best-practices-researcher "Find pagination patterns for Rails"</cod
           </div>
 
           <h3>Invoke a Skill</h3>
-          <p>Skills are like loading a reference book into Claude's brain. When you need deep knowledge in a specific domain:</p>
+          <p>Skills are like loading a reference book into Claude's brain. When you need deep knowledge in a specific
+            domain:</p>
           <div class="card-code-block">
             <pre><code># Generate images with Gemini
 skill: gemini-imagegen
@@ -230,28 +236,32 @@ skill: create-agent-skills</code></pre>
               <div class="philosophy-icon"><i class="fa-solid fa-brain"></i></div>
               <h4>1. Plan</h4>
               <p>
-                Before you write a single line, figure out what you're building and why. Use research agents to gather examples, patterns, and context. Think of it as Google Search meets expert consultation.
+                Before you write a single line, figure out what you're building and why. Use research agents to gather
+                examples, patterns, and context. Think of it as Google Search meets expert consultation.
               </p>
             </div>
             <div class="philosophy-card">
               <div class="philosophy-icon"><i class="fa-solid fa-robot"></i></div>
               <h4>2. Delegate</h4>
               <p>
-                Now build it—with help. Each agent specializes in something (Rails, security, design). You stay in the driver's seat, but you've got a team of specialists riding shotgun.
+                Now build it—with help. Each agent specializes in something (Rails, security, design). You stay in the
+                driver's seat, but you've got a team of specialists riding shotgun.
               </p>
             </div>
             <div class="philosophy-card">
               <div class="philosophy-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
               <h4>3. Assess</h4>
               <p>
-                Before you ship, run the gauntlet. Security agent checks for vulnerabilities. Performance agent flags N+1 queries. Architecture agent questions your design choices. All at once, all in parallel.
+                Before you ship, run the gauntlet. Security agent checks for vulnerabilities. Performance agent flags
+                N+1 queries. Architecture agent questions your design choices. All at once, all in parallel.
               </p>
             </div>
             <div class="philosophy-card">
               <div class="philosophy-icon"><i class="fa-solid fa-book"></i></div>
               <h4>4. Codify</h4>
               <p>
-                You just solved a problem. Write it down. Next time you (or your teammate) face this, you'll have a runbook. That's the "compounding" part—each solution makes the next one faster.
+                You just solved a problem. Write it down. Next time you (or your teammate) face this, you'll have a
+                runbook. That's the "compounding" part—each solution makes the next one faster.
               </p>
             </div>
           </div>
@@ -262,7 +272,8 @@ skill: create-agent-skills</code></pre>
           <h2><i class="fa-solid fa-users-gear"></i> Using Agents</h2>
 
           <p>
-            Think of agents as coworkers with different job titles. You wouldn't ask your security engineer to design your UI, right? Same concept here—each agent has a specialty, and you call the one you need.
+            Think of agents as coworkers with different job titles. You wouldn't ask your security engineer to design
+            your UI, right? Same concept here—each agent has a specialty, and you call the one you need.
           </p>
 
           <h3>Invoking Agents</h3>
@@ -326,7 +337,8 @@ claude agent git-history-analyzer "Show changes to user model"</code></pre>
           <h2><i class="fa-solid fa-terminal"></i> Using Commands</h2>
 
           <p>
-            Commands are macros that run entire workflows for you. One command can spin up a dozen agents, coordinate their work, collect results, and hand you a summary. It's automation all the way down.
+            Commands are macros that run entire workflows for you. One command can spin up a dozen agents, coordinate
+            their work, collect results, and hand you a summary. It's automation all the way down.
           </p>
 
           <h3>Running Commands</h3>
@@ -346,10 +358,14 @@ claude agent git-history-analyzer "Show changes to user model"</code></pre>
           <h3>The Review Workflow</h3>
           <p>Let me show you what happens when you run <code>/review</code>. Here's the sequence:</p>
           <ol>
-            <li><strong>Detection</strong> - Figures out what you want reviewed (PR number, branch name, or current changes)</li>
-            <li><strong>Isolation</strong> - Spins up a git worktree so the review doesn't mess with your working directory</li>
-            <li><strong>Parallel execution</strong> - Launches 10+ agents simultaneously (security, performance, architecture, accessibility...)</li>
-            <li><strong>Synthesis</strong> - Sorts findings by severity (P1 = blocks merge, P2 = should fix, P3 = nice-to-have)</li>
+            <li><strong>Detection</strong> - Figures out what you want reviewed (PR number, branch name, or current
+              changes)</li>
+            <li><strong>Isolation</strong> - Spins up a git worktree so the review doesn't mess with your working
+              directory</li>
+            <li><strong>Parallel execution</strong> - Launches 10+ agents simultaneously (security, performance,
+              architecture, accessibility...)</li>
+            <li><strong>Synthesis</strong> - Sorts findings by severity (P1 = blocks merge, P2 = should fix, P3 =
+              nice-to-have)</li>
             <li><strong>Persistence</strong> - Creates todo files so you don't lose track of issues</li>
             <li><strong>Summary</strong> - Hands you a readable report with action items</li>
           </ol>
@@ -366,7 +382,9 @@ claude agent git-history-analyzer "Show changes to user model"</code></pre>
           <h2><i class="fa-solid fa-wand-magic-sparkles"></i> Using Skills</h2>
 
           <p>
-            Here's the difference: agents are <em>who</em> does the work, skills are <em>what they know</em>. When you invoke a skill, you're loading a reference library into Claude's context—patterns, templates, examples, workflows. It's like handing Claude a technical manual.
+            Here's the difference: agents are <em>who</em> does the work, skills are <em>what they know</em>. When you
+            invoke a skill, you're loading a reference library into Claude's context—patterns, templates, examples,
+            workflows. It's like handing Claude a technical manual.
           </p>
 
           <h3>Invoking Skills</h3>
@@ -400,7 +418,8 @@ skill: gemini-imagegen
           <h2><i class="fa-solid fa-code-pull-request"></i> Code Review Workflow Guide</h2>
 
           <p>
-            You'll spend most of your time here. This workflow is why the plugin exists—to turn code review from a bottleneck into a superpower.
+            You'll spend most of your time here. This workflow is why the plugin exists—to turn code review from a
+            bottleneck into a superpower.
           </p>
 
           <h3>Basic Review</h3>
@@ -415,13 +434,17 @@ skill: gemini-imagegen
           <h3>Understanding Findings</h3>
           <p>Every finding gets a priority label. Here's what they mean:</p>
           <ul>
-            <li><span class="badge badge-critical">P1 Critical</span> - Don't merge until this is fixed. Think: SQL injection, data loss, crashes in production.</li>
-            <li><span class="badge badge-important">P2 Important</span> - Fix before shipping. Performance regressions, N+1 queries, shaky architecture.</li>
-            <li><span class="badge badge-nice">P3 Nice-to-Have</span> - Would be better, but ship without it if you need to. Documentation, minor cleanup, style issues.</li>
+            <li><span class="badge badge-critical">P1 Critical</span> - Don't merge until this is fixed. Think: SQL
+              injection, data loss, crashes in production.</li>
+            <li><span class="badge badge-important">P2 Important</span> - Fix before shipping. Performance regressions,
+              N+1 queries, shaky architecture.</li>
+            <li><span class="badge badge-nice">P3 Nice-to-Have</span> - Would be better, but ship without it if you need
+              to. Documentation, minor cleanup, style issues.</li>
           </ul>
 
           <h3>Working with Todo Files</h3>
-          <p>After a review, you'll have a <code>todos/</code> directory full of markdown files. Each one is a single issue to fix:</p>
+          <p>After a review, you'll have a <code>todos/</code> directory full of markdown files. Each one is a single
+            issue to fix:</p>
           <div class="card-code-block">
             <pre><code># List all pending todos
 ls todos/*-pending-*.md
@@ -439,7 +462,8 @@ ls todos/*-pending-*.md
           <h2><i class="fa-solid fa-plus"></i> Creating Custom Agents</h2>
 
           <p>
-            The built-in agents cover a lot of ground, but every team has unique needs. Maybe you want a "rails-api-reviewer" that enforces your company's API standards. That's 10 minutes of work.
+            The built-in agents cover a lot of ground, but every team has unique needs. Maybe you want a
+            "rails-api-reviewer" that enforces your company's API standards. That's 10 minutes of work.
           </p>
 
           <h3>Agent File Structure</h3>
@@ -474,7 +498,8 @@ You are [role description].
             <div class="callout-content">
               <h4>The Easy Way</h4>
               <p>
-                Don't write the YAML by hand. Just run <code>/create-agent-skill</code> and answer a few questions. The command generates the file, validates the format, and puts it in the right place.
+                Don't write the YAML by hand. Just run <code>/create-agent-skill</code> and answer a few questions. The
+                command generates the file, validates the format, and puts it in the right place.
               </p>
             </div>
           </div>
@@ -485,7 +510,8 @@ You are [role description].
           <h2><i class="fa-solid fa-plus"></i> Creating Custom Skills</h2>
 
           <p>
-            Skills are heavier than agents—they're knowledge bases, not just prompts. You're building a mini library that Claude can reference. Worth the effort for things you do repeatedly.
+            Skills are heavier than agents—they're knowledge bases, not just prompts. You're building a mini library
+            that Claude can reference. Worth the effort for things you do repeatedly.
           </p>
 
           <h3>Skill Directory Structure</h3>
@@ -529,7 +555,9 @@ Use templates from the `templates/` directory.</code></pre>
             <div class="callout-content">
               <h4>Get Help Building Skills</h4>
               <p>
-                Type <code>skill: create-agent-skills</code> and Claude loads expert guidance on skill architecture, best practices, file organization, and validation. It's like having a senior engineer walk you through it.
+                Type <code>skill: create-agent-skills</code> and Claude loads expert guidance on skill architecture,
+                best practices, file organization, and validation. It's like having a senior engineer walk you through
+                it.
               </p>
             </div>
           </div>

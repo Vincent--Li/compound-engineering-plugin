@@ -1,6 +1,6 @@
 # Grow Your Own Garden: Adaptive Agent Ecosystem
 
-> **Issue:** https://github.com/kieranklaassen/compound-engineering-plugin/issues/20
+> **Issue:** https://github.com/Vincent--Li/compound-engineering-plugin/issues/20
 
 ## The Idea
 

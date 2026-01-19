@@ -100,7 +100,7 @@ Use the GitHub CLI to create the issue:
 
 ```bash
 gh issue create \
-  --repo kieranklaassen/every-marketplace \
+  --repo Vincent--Li/compound-engineering-plugin \
   --title "[compound-engineering] Bug: [Brief description]" \
   --body "[Formatted bug report from Step 3]" \
   --label "bug,compound-engineering"
@@ -109,7 +109,7 @@ gh issue create \
 **Note:** If labels don't exist, create without labels:
 ```bash
 gh issue create \
-  --repo kieranklaassen/every-marketplace \
+  --repo Vincent--Li/compound-engineering-plugin \
   --title "[compound-engineering] Bug: [Brief description]" \
   --body "[Formatted bug report]"
 ```
@@ -119,14 +119,14 @@ gh issue create \
 After the issue is created:
 1. Display the issue URL to the user
 2. Thank them for reporting the bug
-3. Let them know the maintainer (Kieran Klaassen) will be notified
+3. Let them know the maintainer (Vincent Li) will be notified
 
 ## Output Format
 
 ```
 ✅ Bug report submitted successfully!
 
-Issue: https://github.com/kieranklaassen/every-marketplace/issues/[NUMBER]
+Issue: https://github.com/Vincent--Li/compound-engineering-plugin/issues/[NUMBER]
 Title: [compound-engineering] Bug: [description]
 
 Thank you for helping improve the compound-engineering plugin!

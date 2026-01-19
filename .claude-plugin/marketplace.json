@@ -1,8 +1,8 @@
 {
   "name": "every-marketplace",
   "owner": {
-    "name": "Kieran Klaassen",
-    "url": "https://github.com/kieranklaassen"
+    "name": "Vincent Li",
+    "url": "https://github.com/Vincent--Li"
   },
   "metadata": {
     "description": "Plugin marketplace for Claude Code extensions",
@@ -14,12 +14,20 @@
       "description": "AI-powered development tools that get smarter with every use. Make each unit of engineering work easier than the last. Includes 27 specialized agents, 20 commands, and 12 skills.",
       "version": "2.21.0",
       "author": {
-        "name": "Kieran Klaassen",
-        "url": "https://github.com/kieranklaassen",
+        "name": "Vincent Li",
+        "url": "https://github.com/Vincent--Li",
         "email": "kieran@every.to"
       },
-      "homepage": "https://github.com/kieranklaassen/compound-engineering-plugin",
-      "tags": ["ai-powered", "compound-engineering", "workflow-automation", "code-review", "quality", "knowledge-management", "image-generation"],
+      "homepage": "https://github.com/Vincent--Li/compound-engineering-plugin",
+      "tags": [
+        "ai-powered",
+        "compound-engineering",
+        "workflow-automation",
+        "code-review",
+        "quality",
+        "knowledge-management",
+        "image-generation"
+      ],
       "source": "./plugins/compound-engineering"
     }
   ]
