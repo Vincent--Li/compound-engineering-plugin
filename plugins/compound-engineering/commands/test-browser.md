@@ -29,7 +29,7 @@ This command tests affected pages in a real browser, catching issues that unit t
 ## Prerequisites
 
 <requirements>
-- Local development server running (e.g., `bin/dev`, `rails server`, `npm run dev`)
+- Local development server running (e.g., `cargo run`, `npm run dev`)
 - agent-browser CLI installed (see Setup below)
 - Git repository with changes to test
 </requirements>
@@ -108,15 +108,12 @@ Map changed files to testable routes:
 
 | File Pattern | Route(s) |
 |-------------|----------|
-| `app/views/users/*` | `/users`, `/users/:id`, `/users/new` |
-| `app/controllers/settings_controller.rb` | `/settings` |
-| `app/javascript/controllers/*_controller.js` | Pages using that Stimulus controller |
-| `app/components/*_component.rb` | Pages rendering that component |
-| `app/views/layouts/*` | All pages (test homepage at minimum) |
-| `app/assets/stylesheets/*` | Visual regression on key pages |
-| `app/helpers/*_helper.rb` | Pages using that helper |
+| `src/routes/*` | Corresponding API routes |
+| `src/handlers/*` | API endpoints |
+| `frontend/src/pages/*` | Frontend pages |
+| `frontend/src/components/*` | Pages using those components |
+| `static/*` | Static file changes |
 | `src/app/*` (Next.js) | Corresponding routes |
-| `src/components/*` | Pages using those components |
 
 Build a list of URLs to test based on the mapping.
 
@@ -138,7 +135,7 @@ If server is not running, inform user:
 **Server not running**
 
 Please start your development server:
-- Rails: `bin/dev` or `rails server`
+- Rust: `cargo run`
 - Node/Next.js: `npm run dev`
 
 Then run `/test-browser` again.

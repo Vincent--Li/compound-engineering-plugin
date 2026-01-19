@@ -120,27 +120,24 @@ This command takes a work document (plan, specification, or todo file) and execu
 
    ```bash
    # Run full test suite
-   bin/rails test
+   cargo test
 
    # Run linting (per CLAUDE.md)
-   # Use linting-agent before pushing to origin
+   cargo fmt --check && cargo clippy -- -D warnings
    ```
-
-2. **Consider Reviewer Agents** (Optional)
 
    Use for complex, risky, or large changes:
 
    - **code-simplicity-reviewer**: Check for unnecessary complexity
-   - **kieran-rails-reviewer**: Verify Rails conventions (Rails projects)
+   - **rust-idiomatic-reviewer**: Verify Rust conventions
    - **performance-oracle**: Check for performance issues
    - **security-sentinel**: Scan for security vulnerabilities
-   - **cora-test-reviewer**: Review test quality (CORA projects)
 
    Run reviewers in parallel with Task tool:
 
    ```
    Task(code-simplicity-reviewer): "Review changes for simplicity"
-   Task(kieran-rails-reviewer): "Check Rails conventions"
+   Task(rust-idiomatic-reviewer): "Check Rust conventions"
    ```
 
    Present findings to user and address critical issues.
@@ -181,7 +178,7 @@ This command takes a work document (plan, specification, or todo file) and execu
 
    **Step 1: Start dev server** (if not running)
    ```bash
-   bin/dev  # Run in background
+   cargo run  # Or your project's run command
    ```
 
    **Step 2: Capture screenshots with agent-browser CLI**
@@ -284,8 +281,8 @@ Before creating PR, verify:
 
 - [ ] All clarifying questions asked and answered
 - [ ] All TodoWrite tasks marked completed
-- [ ] Tests pass (run `bin/rails test`)
-- [ ] Linting passes (use linting-agent)
+- [ ] Tests pass (run `cargo test`)
+- [ ] Linting passes (run `cargo fmt --check && cargo clippy`)
 - [ ] Code follows existing patterns
 - [ ] Figma designs match implementation (if applicable)
 - [ ] Before/after screenshots captured and uploaded (for UI changes)

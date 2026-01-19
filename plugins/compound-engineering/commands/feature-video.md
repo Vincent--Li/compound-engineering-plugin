@@ -21,7 +21,7 @@ This command creates professional video walkthroughs of features for PR document
 ## Prerequisites
 
 <requirements>
-- Local development server running (e.g., `bin/dev`, `rails server`)
+- Local development server running (e.g., `cargo run`)
 - agent-browser CLI installed
 - Git repository with a PR to document
 - `ffmpeg` installed (for video conversion)
@@ -79,10 +79,10 @@ gh pr view [number] --json files -q '.files[].path'
 
 | File Pattern | Route(s) |
 |-------------|----------|
-| `app/views/users/*` | `/users`, `/users/:id`, `/users/new` |
-| `app/controllers/settings_controller.rb` | `/settings` |
-| `app/javascript/controllers/*_controller.js` | Pages using that Stimulus controller |
-| `app/components/*_component.rb` | Pages rendering that component |
+| `src/routes/*` | Corresponding API routes |
+| `src/handlers/*` | API endpoints |
+| `frontend/src/pages/*` | Frontend pages |
+| `frontend/src/components/*` | Pages using those components |
 
 </gather_context>
 

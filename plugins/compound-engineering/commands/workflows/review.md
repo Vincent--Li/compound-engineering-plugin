@@ -54,19 +54,17 @@ Ensure that the code is ready for analysis (either in worktree or on current bra
 
 Run ALL or most of these agents at the same time:
 
-1. Task kieran-rails-reviewer(PR content)
-2. Task dhh-rails-reviewer(PR title)
-3. If turbo is used: Task rails-turbo-expert(PR content)
-4. Task git-history-analyzer(PR content)
-5. Task dependency-detective(PR content)
-6. Task pattern-recognition-specialist(PR content)
-7. Task architecture-strategist(PR content)
-8. Task code-philosopher(PR content)
-9. Task security-sentinel(PR content)
-10. Task performance-oracle(PR content)
-11. Task devops-harmony-analyst(PR content)
-12. Task data-integrity-guardian(PR content)
-13. Task agent-native-reviewer(PR content) - Verify new features are agent-accessible
+1. Task rust-idiomatic-reviewer(PR content)
+2. Task git-history-analyzer(PR content)
+3. Task dependency-detective(PR content)
+4. Task pattern-recognition-specialist(PR content)
+5. Task architecture-strategist(PR content)
+6. Task code-philosopher(PR content)
+7. Task security-sentinel(PR content)
+8. Task performance-oracle(PR content)
+9. Task devops-harmony-analyst(PR content)
+10. Task data-integrity-guardian(PR content)
+11. Task agent-native-reviewer(PR content) - Verify new features are agent-accessible
 
 </parallel_tasks>
 
@@ -76,21 +74,21 @@ Run ALL or most of these agents at the same time:
 
 These agents are run ONLY when the PR matches specific criteria. Check the PR files list to determine if they apply:
 
-**If PR contains database migrations (db/migrate/*.rb files) or data backfills:**
+**If PR contains database migrations (migrations/*.sql files) or data backfills:**
 
-14. Task data-migration-expert(PR content) - Validates ID mappings match production, checks for swapped values, verifies rollback safety
-15. Task deployment-verification-agent(PR content) - Creates Go/No-Go deployment checklist with SQL verification queries
+14. Task data-migration-expert(PR content) - Validates schema changes, checks for breaking changes, verifies rollback safety
+15. Task deployment-verification-agent(PR content) - Creates Go/No-Go deployment checklist with verification queries
 
 **When to run migration agents:**
-- PR includes files matching `db/migrate/*.rb`
+- PR includes files matching `migrations/*.sql` or schema changes
 - PR modifies columns that store IDs, enums, or mappings
-- PR includes data backfill scripts or rake tasks
-- PR changes how data is read/written (e.g., changing from FK to string column)
-- PR title/body mentions: migration, backfill, data transformation, ID mapping
+- PR includes data migration scripts
+- PR changes how data is read/written
+- PR title/body mentions: migration, backfill, data transformation, schema change
 
 **What these agents check:**
-- `data-migration-expert`: Verifies hard-coded mappings match production reality (prevents swapped IDs), checks for orphaned associations, validates dual-write patterns
-- `deployment-verification-agent`: Produces executable pre/post-deploy checklists with SQL queries, rollback procedures, and monitoring plans
+- `data-migration-expert`: Verifies schema changes are safe, checks for breaking changes, validates migration patterns
+- `deployment-verification-agent`: Produces executable pre/post-deploy checklists with verification queries, rollback procedures, and monitoring plans
 
 </conditional_agents>
 
@@ -331,7 +329,7 @@ Examples:
 - `p2` - Important (should fix, architectural/performance)
 - `p3` - Nice-to-have (enhancements, cleanup)
 
-**Tagging:** Always add `code-review` tag, plus: `security`, `performance`, `architecture`, `rails`, `quality`, etc.
+**Tagging:** Always add `code-review` tag, plus: `security`, `performance`, `architecture`, `rust`, `quality`, etc.
 
 #### Step 3: Summary Report
 
@@ -367,7 +365,7 @@ After creating all todo files, present comprehensive summary:
 
 ### Review Agents Used:
 
-- kieran-rails-reviewer
+- rust-idiomatic-reviewer
 - security-sentinel
 - performance-oracle
 - architecture-strategist
@@ -434,7 +432,7 @@ After creating all todo files, present comprehensive summary:
 | Indicator | Project Type |
 |-----------|--------------|
 | `*.xcodeproj`, `*.xcworkspace`, `Package.swift` (iOS) | iOS/macOS |
-| `Gemfile`, `package.json`, `app/views/*`, `*.html.*` | Web |
+| `Cargo.toml`, `package.json`, `*.html`, `*.tsx` | Web/Rust |
 | Both iOS files AND web files | Hybrid (test both) |
 
 </detect_project_type>
@@ -457,7 +455,7 @@ After presenting the Summary Report, offer appropriate testing based on project 
 2. No - skip
 ```
 
-**For Hybrid Projects (e.g., Rails + Hotwire Native):**
+**For Hybrid Projects (e.g., Rust backend + React frontend):**
 ```markdown
 **"Want to run end-to-end tests?"**
 1. Web only - run `/test-browser`
