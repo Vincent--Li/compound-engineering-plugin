@@ -1,3 +1,23 @@
+## [2.27.0] - 2026-01-19
+
+### Added
+
+- **`/write-unit-tests` command** - Automatically generate unit tests
+  - Focuses on edge cases, boundary conditions, and error handling
+  - Supports Rust, TypeScript/JS, and Python
+- **`/test-and-fix` command** - Autonomous test fixing loop
+  - Runs tests and iteratively fixes compilation and assertion errors
+  - Stops when all tests pass or after 5 attempts
+- **Review Workflow Update**
+  - `/workflows:review` now enforces 90% test coverage
+  - Automatically triggers test generation and fixing if coverage is low
+
+### Summary
+
+- 27 agents, 23 commands, 14 skills, 1 MCP server
+
+---
+
 # Changelog
 
 All notable changes to the compound-engineering plugin will be documented in this file.

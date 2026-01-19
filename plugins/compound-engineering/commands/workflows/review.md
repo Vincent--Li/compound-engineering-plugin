@@ -48,6 +48,27 @@ Ensure that the code is ready for analysis (either in worktree or on current bra
 
 </task_list>
 
+### 2. Enforce Test Coverage (90%)
+
+<coverage_check>
+Before running deep analysis, ensure the codebase has sufficient test coverage.
+
+**Step 1: Measure Coverage**
+Run the appropriate coverage tool for the project:
+- **Rust**: `cargo llvm-cov` (if available) or check `tests/` directory density.
+- **TypeScript/JS**: `npm test -- --coverage` or check `__tests__` density.
+
+**Step 2: Enforce 90% Threshold**
+If coverage is < 90% or critical paths are untested:
+
+1.  **Generate Tests**: Run `/write-unit-tests [path]` for uncovered files.
+    *   Focus on edge cases, boundary conditions, and error handling.
+2.  **Fix & Verify**: Run `/test-and-fix` to ensure new tests pass.
+    *   Iteratively fix any failures caused by the new tests.
+
+**Continue only when tests pass and coverage is sufficient.**
+</coverage_check>
+
 #### Parallel Agents to review the PR:
 
 <parallel_tasks>
