@@ -86,6 +86,8 @@ Run ALL or most of these agents at the same time:
 9. Task devops-harmony-analyst(PR content)
 10. Task data-integrity-guardian(PR content)
 11. Task agent-native-reviewer(PR content) - Verify new features are agent-accessible
+12. Task i18n-reviewer(PR content) - Audit internationalization: hardcoded strings, translation coverage, locale formatting
+13. Task julik-frontend-races-reviewer(PR content) - Review JS/Stimulus for race conditions, timer cleanup, DOM state management
 
 </parallel_tasks>
 
